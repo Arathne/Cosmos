@@ -1,3 +1,8 @@
+#include <psp2/kernel/processmgr.h>
+#include <IoController.h>
+
 int main () {
-    return 0;
+    
+
+    sceKernelExitProcess(0);
 }

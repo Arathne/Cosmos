@@ -23,6 +23,9 @@ include(path.cmake)
 include_directories(include)
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
+add_compile_definitions(DATA_FOLDER="ux0:/data/onyx")
+
+# target_link_libraries(${PROJECT_NAME})
 
 vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME} UNSAFE)
 vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
