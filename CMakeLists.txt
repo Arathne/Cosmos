@@ -22,8 +22,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 include(path.cmake)
 include_directories(include)
 
+set(DATA_FOLDER "ux0:/data/onyx")
+
 add_executable(${PROJECT_NAME} ${SRC_FILES})
-add_compile_definitions(DATA_FOLDER="ux0:/data/onyx")
+add_compile_definitions(DATA_FOLDER="${DATA_FOLDER}")
+add_compile_definitions(TEST_FOLDER="${DATA_FOLDER}/test")
 
 # target_link_libraries(${PROJECT_NAME})
 
