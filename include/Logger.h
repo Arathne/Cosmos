@@ -6,9 +6,8 @@
 
 class Logger {
     public:
-        Logger ();
+        Logger (void);
         Logger (size_t max_size);
-        ~Logger ();
         
         void add (const std::string & message);
         void writeToFile (const std::string & path);

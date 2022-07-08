@@ -1,14 +1,12 @@
 #include <Logger.h>
 
-Logger::Logger ():
+Logger::Logger (void):
     size_((size_t)-1)
 {}
 
 Logger::Logger (size_t max_size):
     size_(max_size)
 {}
-
-Logger::~Logger () {}
 
 void Logger::add (const std::string & message)
 {
