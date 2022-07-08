@@ -15,6 +15,9 @@ class IoWriteController
          * @return: bool
                 true   "writing to file successful"
                 false  "writing to file failed"
+         * @notes [
+                + creates new file if it does not exist
+            ]
         */
         static bool writeTextToFile (const std::string & filePath, const std::string & content);
 
@@ -27,6 +30,9 @@ class IoWriteController
          * @return: bool
                 true   "appending to file successful"
                 false  "appending to file failed"
+         * @notes [
+                + creates new file if it does not exist
+            ]
         */
         static bool appendTextToFile (const std::string & filePath, const std::string & content);
 };

@@ -1,8 +1,8 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
+#include <controllers/IoWriteController.h>
 #include <vector>
-#include <controllers/IoController.h>
 
 class Logger {
     public:
@@ -10,8 +10,8 @@ class Logger {
         Logger (size_t max_size);
         ~Logger ();
         
-        void add (std::string message);
-        void writeToFile (std::string path);
+        void add (const std::string & message);
+        void writeToFile (const std::string & path);
 
     private:
         std::vector<std::string> log_;

@@ -10,7 +10,7 @@ Logger::Logger (size_t max_size):
 
 Logger::~Logger () {}
 
-void Logger::add (std::string message)
+void Logger::add (const std::string & message)
 {
     log_.push_back(message);
 
@@ -18,9 +18,9 @@ void Logger::add (std::string message)
         log_.erase (log_.begin());
 }
 
-void Logger::writeToFile (std::string path)
+void Logger::writeToFile (const std::string & path)
 {
-    IoController::writeFile(path, Logger::toString());
+    IoWriteController::writeTextToFile(path, Logger::toString());
 }
 
 std::string Logger::toString (void) const

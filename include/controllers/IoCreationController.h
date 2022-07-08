@@ -27,7 +27,7 @@ class IoCreationController {
                 true   "successfully created empty directory"
                 false  "failed to create empty directory"
         */
-        static int createDirectory (const std::string & filePath);
+        static bool createDirectory (const std::string & filePath);
 };
 
 #endif
