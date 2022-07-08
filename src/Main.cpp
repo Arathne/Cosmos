@@ -1,17 +1,15 @@
 #include <psp2/kernel/processmgr.h>
 
-#include <controllers/IoController.h>
-#include <tests/TestIoController.h>
+#include <controllers/IoDestructionController.h>
+#include <controllers/IoReadController.h>
+#include <controllers/IoWriteController.h>
+#include <controllers/IoCreationController.h>
 
 int main () 
-{
-    IoController::createDirectory(DATA_FOLDER);
-
-    IoController::deleteDirectory(TEST_FOLDER);
-    //IoController::createDirectory(TEST_FOLDER);
-
-    TestIoController test;
-    test.run();
+{ 
+    std::string path = std::string(DATA_FOLDER) + "/random";
+    
+    IoCreationController::createDirectory(path);
 
     sceKernelExitProcess(0);
 }
