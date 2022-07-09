@@ -2,6 +2,8 @@
 #define TEST_IO_READ_CONTROLLER
 
 #include <controllers/IoReadController.h>
+#include <controllers/IoWriteController.h>
+#include <controllers/IoDestructionController.h>
 #include <tests/Test.h>
 
 class TestIoReadController : public Test {
@@ -24,6 +26,38 @@ class TestIoReadController : public Test {
          * expected: true  "is a directory"
         */
         std::string test_isDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+
+        /* testing: readText()
+         * params: [
+                filePath: "path to file"
+            ]
+         * expected: "single word"
+        */
+        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsSingleWordFromFile (void);
+
+        /* testing: readText()
+         * params: [
+                filePath: "path to file"
+            ]
+         * expected: "single line"
+        */
+        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsSingleLineFromFile (void);
+
+        /* testing: readText()
+         * params: [
+                filePath: "path to file"
+            ]
+         * expected: "mulple lines"
+        */
+        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsMultiLineFromFile (void);
+
+        /* testing: readText()
+         * params: [
+                filePath: "path that does not exist"
+            ]
+         * expected: "empty string"
+        */
+        std::string test_readText_whenCalledToReadFromNonExistingFile_ReturnsEmptyString (void);
 };
 
 #endif

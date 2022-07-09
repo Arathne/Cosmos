@@ -1,10 +1,12 @@
 #ifndef TEST_CONTROLLER_H
 #define TEST_CONTROLLER_H
 
+#include <tests/TestIoReadController.h>
+#include <tests/TestIoWriteController.h>
+
+#include <controllers/IoDestructionController.h>
 #include <tests/Test.h>
 #include <vector>
-
-#include <tests/TestIoReadController.h>
 
 class TestController {
     public:

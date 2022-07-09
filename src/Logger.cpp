@@ -16,9 +16,9 @@ void Logger::add (const std::string & message)
         log_.erase (log_.begin());
 }
 
-void Logger::writeToFile (const std::string & path)
+void Logger::writeToFile (const std::string & filePath)
 {
-    IoWriteController::writeTextToFile(path, Logger::toString());
+    IoWriteController::write(filePath, Logger::toString());
 }
 
 std::string Logger::toString (void) const
@@ -27,7 +27,9 @@ std::string Logger::toString (void) const
     
     for (int i = 0; i < log_.size(); i++) 
     {
-        output += log_.at(i) + "\n";
+        output += log_.at(i);
+        if (i != log_.size()-1)
+            output += "\n";
     }
 
     return output;

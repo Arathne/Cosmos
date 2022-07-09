@@ -13,8 +13,19 @@ bool IoReadController::isDirectory (const std::string & directoryPath)
 
 bool IoReadController::isDirectory (const SceMode & mode)
 {
-    if ((mode & SCE_S_IFDIR) == SCE_S_IFDIR) // check to see if directory flag set
+    if ((mode & SCE_S_IFDIR) == SCE_S_IFDIR) // check to see if directory flag is set
         return true;
 
     return false;
+}
+
+std::string IoReadController::readText (const std::string & filePath)
+{
+    std::ifstream inputStream(filePath);
+    std::stringstream stringStream;
+    
+    if (inputStream) 
+        stringStream << inputStream.rdbuf();
+
+    return stringStream.str();
 }

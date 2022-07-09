@@ -23,12 +23,14 @@ include(path.cmake)
 include_directories(include)
 
 set(DATA_FOLDER "ux0:/data/onyx")
+set(TEST_FOLDER "${DATA_FOLDER}/test")
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 add_compile_definitions(
   DATA_FOLDER="${DATA_FOLDER}"
-  TEST_FOLDER="${DATA_FOLDER}/test"
+  TEST_FOLDER="${TEST_FOLDER}"
+  TEMP_FILE="${TEST_FOLDER}/temp"
   DEVELOPER_MODE
 )
 

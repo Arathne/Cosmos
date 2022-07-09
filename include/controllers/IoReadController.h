@@ -3,6 +3,8 @@
 
 #include <psp2/io/stat.h> 
 #include <string>
+#include <sstream>
+#include <fstream>
 
 class IoReadController 
 {
@@ -28,6 +30,16 @@ class IoReadController
                 false  "path is not a directory"
         */
         static bool isDirectory (const SceMode & mode);
+
+        /* @name: readText
+         * @description: "reads text from a file"
+         * @params: [
+                filePath  string  "full path to directory"
+            ]
+         * @return: string
+                text that is in file
+        */
+        static std::string readText (const std::string & filePath);
 };
 
 #endif

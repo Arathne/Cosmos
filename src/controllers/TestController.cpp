@@ -3,6 +3,7 @@
 TestController::TestController (void) 
 {
     testList_.push_back(new TestIoReadController());
+    testList_.push_back(new TestIoWriteController());
 }
 
 TestController::~TestController (void) 
@@ -21,4 +22,5 @@ TestController::~TestController (void)
         Test* testObj = testList_.at(i);
         testObj -> run();
     }
+    IoDestructionController::deleteFile(TEMP_FILE);
  }

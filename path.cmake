@@ -6,5 +6,6 @@ set( SRC_FILES
     src/controllers/IoCreationController.cpp
     src/controllers/TestController.cpp
     src/tests/TestIoReadController.cpp
+    src/tests/TestIoWriteController.cpp
     src/Logger.cpp
 )
