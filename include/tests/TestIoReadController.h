@@ -7,6 +7,23 @@
 class TestIoReadController : public Test {
     public:
         void run (void);
+    
+    private:
+        /* testing: isDirectory()
+         * params: [
+                directoryPath: "string with random characters"
+            ]
+         * expected: false  "not a directory"
+        */
+        std::string test_isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+
+        /* testing: isDirectory()
+         * params: [
+                directoryPath: "app folder"
+            ]
+         * expected: true  "is a directory"
+        */
+        std::string test_isDirectory_whenCalledWithValidPath_ReturnsTrue (void);
 };
 
 #endif
