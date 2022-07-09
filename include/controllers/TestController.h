@@ -3,6 +3,7 @@
 
 #include <tests/TestIoReadController.h>
 #include <tests/TestIoWriteController.h>
+#include <tests/TestIoCreationController.h>
 
 #include <controllers/IoDestructionController.h>
 #include <tests/Test.h>

@@ -4,6 +4,7 @@ TestController::TestController (void)
 {
     testList_.push_back(new TestIoReadController());
     testList_.push_back(new TestIoWriteController());
+    testList_.push_back(new TestIoCreationController());
 }
 
 TestController::~TestController (void) 
