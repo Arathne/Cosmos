@@ -8,6 +8,7 @@
 class TestIoCreationController  : public Test
 {
     public:
+        std::string getName (void) const;
         void run (void);
 
     private:
@@ -17,7 +18,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: int  <0  "failed to create new file"
         */
-        std::string test_createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (void);
+        std::string createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (void);
 
         /* testing: createFile()
          * params: [
@@ -25,7 +26,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: int  0  "successfully created new file"
         */
-        std::string test_createFile_whenCalledWithValidPath_ReturnsZero (void);
+        std::string createFile_whenCalledWithValidPath_ReturnsZero (void);
 
         /* testing: createDirectory()
          * params: [
@@ -33,7 +34,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: false  "failed to create new directory"
         */
-        std::string test_createDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+        std::string createDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
 
         /* testing: createDirectory()
          * params: [
@@ -41,7 +42,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: true  "successfully created new directory"
         */
-        std::string test_createDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        std::string createDirectory_whenCalledWithValidPath_ReturnsTrue (void);
 };
 
 #endif

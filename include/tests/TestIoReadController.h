@@ -8,6 +8,7 @@
 
 class TestIoReadController : public Test {
     public:
+        std::string getName (void) const;
         void run (void);
     
     private:
@@ -17,7 +18,7 @@ class TestIoReadController : public Test {
             ]
          * expected: false  "not a directory"
         */
-        std::string test_isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+        std::string isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
 
         /* testing: isDirectory()
          * params: [
@@ -25,7 +26,7 @@ class TestIoReadController : public Test {
             ]
          * expected: true  "is a directory"
         */
-        std::string test_isDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        std::string isDirectory_whenCalledWithValidPath_ReturnsTrue (void);
 
         /* testing: readText()
          * params: [
@@ -33,7 +34,7 @@ class TestIoReadController : public Test {
             ]
          * expected: "single word"
         */
-        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsSingleWordFromFile (void);
+        std::string readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (void);
 
         /* testing: readText()
          * params: [
@@ -41,7 +42,7 @@ class TestIoReadController : public Test {
             ]
          * expected: "single line"
         */
-        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsSingleLineFromFile (void);
+        std::string readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (void);
 
         /* testing: readText()
          * params: [
@@ -49,7 +50,7 @@ class TestIoReadController : public Test {
             ]
          * expected: "mulple lines"
         */
-        std::string test_readText_whenCalledToReadFromExistingFile_ReturnsMultiLineFromFile (void);
+        std::string readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (void);
 
         /* testing: readText()
          * params: [
@@ -57,7 +58,7 @@ class TestIoReadController : public Test {
             ]
          * expected: "empty string"
         */
-        std::string test_readText_whenCalledToReadFromNonExistingFile_ReturnsEmptyString (void);
+        std::string readText_whenCalledWithNonExistingFile_ReturnsEmptyString (void);
 };
 
 #endif

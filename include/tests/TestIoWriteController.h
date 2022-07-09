@@ -9,6 +9,8 @@ class TestIoWriteController : public Test
 {
     public:
         TestIoWriteController (void);
+
+        std::string getName (void) const;
         void run (void);
     
     private:
@@ -21,7 +23,7 @@ class TestIoWriteController : public Test
             ]
          * expected: false  "write failed"
         */
-        std::string test_write_whenCalledWithInvalidPath_returnsFalse (void);
+        std::string write_whenCalledWithInvalidPath_returnsFalse (void);
 
         /* testing: write()
          * params: [
@@ -29,7 +31,7 @@ class TestIoWriteController : public Test
             ]
          * expected: true  "write successful"
         */
-        std::string test_write_whenCalledWithValidPath_returnsTrue (void);
+        std::string write_whenCalledWithValidPath_returnsTrue (void);
 
         /* testing: append()
          * params: [
@@ -37,7 +39,7 @@ class TestIoWriteController : public Test
             ]
          * expected: false  "append failed"
         */
-        std::string test_append_whenCalledWithInvalidPath_returnsFalse (void);
+        std::string append_whenCalledWithInvalidPath_returnsFalse (void);
 
         /* testing: append()
          * params: [
@@ -45,7 +47,7 @@ class TestIoWriteController : public Test
             ]
          * expected: true  "append successful"
         */
-        std::string test_append_whenCalledWithValidPath_returnsTrue (void);
+        std::string append_whenCalledWithValidPath_returnsTrue (void);
 };
 
 #endif

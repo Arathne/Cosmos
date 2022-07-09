@@ -8,14 +8,41 @@
 class TestIoDestructionController : public Test 
 {
     public:
+        std::string getName (void) const;
         void run (void);
 
     private:
-        std::string test_deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (void);
-        std::string test_deleteFile_whenCalledWithValidPath_ReturnsZero (void);
-        
-        std::string test_deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
-        std::string test_deleteDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        /* testing: deleteFile()
+         * params: [
+                directoryPath: "path that does not exist"
+            ]
+         * expected: true  "failed to delete file"
+        */
+        std::string deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (void);
+
+        /* testing: deleteFile()
+         * params: [
+                directoryPath: "path that does exist"
+            ]
+         * expected: true  "successfully deleted file"
+        */
+        std::string deleteFile_whenCalledWithValidPath_ReturnsZero (void);
+
+        /* testing: deleteDirectory()
+         * params: [
+                directoryPath: "path that does not exist"
+            ]
+         * expected: false  "failed to delete directory"
+        */
+        std::string deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+
+        /* testing: deleteDirectory()
+         * params: [
+                directoryPath: "path that does exist"
+            ]
+         * expected: true  "successfully deleted directory"
+        */
+        std::string deleteDirectory_whenCalledWithValidPath_ReturnsTrue (void);
 };
 
 #endif
