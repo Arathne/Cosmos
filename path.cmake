@@ -8,5 +8,6 @@ set( SRC_FILES
     src/tests/TestIoReadController.cpp
     src/tests/TestIoWriteController.cpp
     src/tests/TestIoCreationController.cpp
+    src/tests/TestIoDestructionController.cpp
     src/Logger.cpp
 )

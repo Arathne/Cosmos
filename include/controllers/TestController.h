@@ -1,10 +1,6 @@
 #ifndef TEST_CONTROLLER_H
 #define TEST_CONTROLLER_H
 
-#include <tests/TestIoReadController.h>
-#include <tests/TestIoWriteController.h>
-#include <tests/TestIoCreationController.h>
-
 #include <controllers/IoDestructionController.h>
 #include <tests/Test.h>
 #include <vector>
@@ -24,5 +20,10 @@ class TestController {
     private:
         std::vector<Test*> testList_;
 };
+
+#include <tests/TestIoReadController.h>
+#include <tests/TestIoWriteController.h>
+#include <tests/TestIoCreationController.h>
+#include <tests/TestIoDestructionController.h>
 
 #endif

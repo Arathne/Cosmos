@@ -1,5 +1,5 @@
-#ifndef TEST_IO_CREATION_CONTROLLER
-#define TEST_IO_CREATION_CONTROLLER
+#ifndef TEST_IO_CREATION_CONTROLLER_H
+#define TEST_IO_CREATION_CONTROLLER_H
 
 #include <tests/Test.h>
 #include <controllers/IoCreationController.h>

@@ -1,5 +1,5 @@
-#ifndef TEST_IO_READ_CONTROLLER
-#define TEST_IO_READ_CONTROLLER
+#ifndef TEST_IO_READ_CONTROLLER_H
+#define TEST_IO_READ_CONTROLLER_H
 
 #include <controllers/IoReadController.h>
 #include <controllers/IoWriteController.h>

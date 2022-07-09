@@ -1,5 +1,5 @@
-#ifndef TEST_IO_WRITE_CONTROLLER
-#define TEST_IO_WRITE_CONTROLLER
+#ifndef TEST_IO_WRITE_CONTROLLER_H
+#define TEST_IO_WRITE_CONTROLLER_H
 
 #include <tests/Test.h>
 #include <controllers/IoWriteController.h>
