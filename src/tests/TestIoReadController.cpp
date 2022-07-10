@@ -7,85 +7,73 @@ std::string TestIoReadController::getName (void) const
 
 void TestIoReadController::run (Logger & log)
 {
-    isDirectory_whenCalledWithInvalidPath_ReturnsFalse(log);
-    isDirectory_whenCalledWithValidPath_ReturnsTrue(log);
-    readText_whenCalledWithNonExistingFile_ReturnsEmptyString(log);
-    readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile(log);
-    readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile(log);
-    readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile(log);
+    isDirectory_whenCalledWithInvalidPath_returnsFalse(log);
+    isDirectory_whenCalledWithValidPath_returnsTrue(log);
+    readText_whenCalledWithNonExistingFile_returnsEmptyString(log);
+    readText_whenCalledWithExistingFile_returnsSingleWordFromFile(log);
+    readText_whenCalledWithExistingFile_returnsSingleLineFromFile(log);
+    readText_whenCalledWithExistingFile_returnsMultiLineFromFile(log);
 } 
 
-void TestIoReadController::isDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log) 
+void TestIoReadController::isDirectory_whenCalledWithInvalidPath_returnsFalse (Logger & log) 
 {
-    std::string directoryPath = "a9/*!-*s8dyhpk;nd!}{}AS|D";
-    bool isDirectory = IoReadController::isDirectory(directoryPath);
+    std::string invalidPath = "a9/*!-*s8dyhpk;nd!}{}AS|D";
 
-    std::string result = (isDirectory == false) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
+    bool expected = false;
+    bool actual = IoReadController::isDirectory(invalidPath);
 
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
-void TestIoReadController::isDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log) 
+void TestIoReadController::isDirectory_whenCalledWithValidPath_returnsTrue (Logger & log) 
 {
-    std::string directoryPath = "ux0:/app";
-    bool isDirectory = IoReadController::isDirectory(directoryPath);
+    std::string validPath = "ux0:/app";
 
-    std::string result = (isDirectory == true) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
+    bool expected = true;
+    bool actual = IoReadController::isDirectory(validPath);
 
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
-void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (Logger & log) 
+void TestIoReadController::readText_whenCalledWithExistingFile_returnsSingleWordFromFile (Logger & log) 
 {
+    std::string validPath = TEMP_FILE;
     std::string expectedText = "abcdefg";
-    IoWriteController::write(TEMP_FILE, expectedText);
+    IoWriteController::write(validPath, expectedText);
 
-    std::string actualText = IoReadController::readText(TEMP_FILE);
+    std::string actualText = IoReadController::readText(validPath);
 
-    std::string result = (actualText == expectedText) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(true, (expectedText == actualText), __FUNCTION__, log);
 }
 
-void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (Logger & log) 
+void TestIoReadController::readText_whenCalledWithExistingFile_returnsSingleLineFromFile (Logger & log) 
 {
+    std::string validPath = TEMP_FILE;
     std::string expectedText = "hello world lmao";
-    IoWriteController::write(TEMP_FILE, expectedText);
+    IoWriteController::write(validPath, expectedText);
 
-    std::string actualText = IoReadController::readText(TEMP_FILE);
+    std::string actualText = IoReadController::readText(validPath);
 
-    std::string result = (actualText == expectedText) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(true, (expectedText == actualText), __FUNCTION__, log);
 }
 
-void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (Logger & log) 
+void TestIoReadController::readText_whenCalledWithExistingFile_returnsMultiLineFromFile (Logger & log) 
 {
+    std::string validPath = TEMP_FILE;
     std::string expectedText = "hello world\nplaystation vita\nza warudo";
-    IoWriteController::write(TEMP_FILE, expectedText);
+    IoWriteController::write(validPath, expectedText);
 
-    std::string actualText = IoReadController::readText(TEMP_FILE);
+    std::string actualText = IoReadController::readText(validPath);
 
-    std::string result = (actualText == expectedText) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(true, (expectedText == actualText), __FUNCTION__, log);
 }
 
-void TestIoReadController::readText_whenCalledWithNonExistingFile_ReturnsEmptyString (Logger & log) 
+void TestIoReadController::readText_whenCalledWithNonExistingFile_returnsEmptyString (Logger & log) 
 {
+    std::string invalidPath = "a9///*!-*s8dyhpk;nd!}{}AS|D";
     std::string expectedText = "";
 
-    std::string filePath = "a9///*!-*s8dyhpk;nd!}{}AS|D";
-    std::string actualText = IoReadController::readText(filePath);
+    std::string actualText = IoReadController::readText(invalidPath);
 
-    std::string result = (actualText == expectedText) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
-
+    UnitTest::equals(true, (expectedText == actualText), __FUNCTION__, log);
 }

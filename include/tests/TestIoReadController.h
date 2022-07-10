@@ -19,7 +19,7 @@ class TestIoReadController : public Test
             ]
          * expected: false  "not a directory"
         */
-        void isDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log);
+        void isDirectory_whenCalledWithInvalidPath_returnsFalse (Logger & log);
 
         /* testing: isDirectory()
          * params: [
@@ -27,7 +27,7 @@ class TestIoReadController : public Test
             ]
          * expected: true  "is a directory"
         */
-        void isDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log);
+        void isDirectory_whenCalledWithValidPath_returnsTrue (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -35,7 +35,7 @@ class TestIoReadController : public Test
             ]
          * expected: "single word"
         */
-        void readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (Logger & log);
+        void readText_whenCalledWithExistingFile_returnsSingleWordFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -43,7 +43,7 @@ class TestIoReadController : public Test
             ]
          * expected: "single line"
         */
-        void readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (Logger & log);
+        void readText_whenCalledWithExistingFile_returnsSingleLineFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -51,7 +51,7 @@ class TestIoReadController : public Test
             ]
          * expected: "mulple lines"
         */
-        void readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (Logger & log);
+        void readText_whenCalledWithExistingFile_returnsMultiLineFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -59,7 +59,7 @@ class TestIoReadController : public Test
             ]
          * expected: "empty string"
         */
-        void readText_whenCalledWithNonExistingFile_ReturnsEmptyString (Logger & log);
+        void readText_whenCalledWithNonExistingFile_returnsEmptyString (Logger & log);
 };
 
 #endif

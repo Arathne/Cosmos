@@ -18,7 +18,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "failed to delete file"
         */
-        void deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (Logger & log);
+        void deleteFile_whenCalledWithInvalidPath_returnsLessThanZero (Logger & log);
 
         /* testing: deleteFile()
          * params: [
@@ -26,7 +26,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "successfully deleted file"
         */
-        void deleteFile_whenCalledWithValidPath_ReturnsZero (Logger & log);
+        void deleteFile_whenCalledWithValidPath_returnsZero (Logger & log);
 
         /* testing: deleteDirectory()
          * params: [
@@ -34,7 +34,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: false  "failed to delete directory"
         */
-        void deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log);
+        void deleteDirectory_whenCalledWithInvalidPath_returnsFalse (Logger & log);
 
         /* testing: deleteDirectory()
          * params: [
@@ -42,7 +42,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "successfully deleted directory"
         */
-        void deleteDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log);
+        void deleteDirectory_whenCalledWithValidPath_returnsTrue (Logger & log);
 };
 
 #endif

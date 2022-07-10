@@ -7,51 +7,53 @@ std::string TestIoCreationController::getName (void) const
 
 void TestIoCreationController::run (Logger & log)
 {
-    createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero(log);
-    createFile_whenCalledWithValidPath_ReturnsZero(log);
-    createDirectory_whenCalledWithInvalidPath_ReturnsFalse(log);
-    createDirectory_whenCalledWithValidPath_ReturnsTrue(log);
+    createFile_whenCalledWithInvalidPath_returnsIntLessThanZero(log);
+    createFile_whenCalledWithValidPath_returnsZero(log);
+    createDirectory_whenCalledWithInvalidPath_returnsFalse(log);
+    createDirectory_whenCalledWithValidPath_returnsTrue(log);
 }
 
-void TestIoCreationController::createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (Logger & log)
+void TestIoCreationController::createFile_whenCalledWithInvalidPath_returnsIntLessThanZero (Logger & log)
 {
-    int statusCode = IoCreationController::createFile("//asldkma**&^%/1/");
+    std::string invalidPath = "//asldkma**&^%/1/";
+    int statusCode = IoCreationController::createFile(invalidPath);
 
-    std::string result = (statusCode < 0) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
+    int expected = true;
+    int actual = (statusCode < 0) ? true : false;
 
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
-void TestIoCreationController::createFile_whenCalledWithValidPath_ReturnsZero (Logger & log)
+void TestIoCreationController::createFile_whenCalledWithValidPath_returnsZero (Logger & log)
 {
-    IoDestructionController::deleteFile(TEMP_FILE);
-    int statusCode = IoCreationController::createFile(TEMP_FILE);
+    std::string validPath = TEMP_FILE;
+    IoDestructionController::deleteFile(validPath);
+    int statusCode = IoCreationController::createFile(validPath);
 
-    std::string result = (statusCode == 0) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
+    int expected = true;
+    int actual = (statusCode == 0) ? true : false;
 
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
-void TestIoCreationController::createDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log)
+void TestIoCreationController::createDirectory_whenCalledWithInvalidPath_returnsFalse (Logger & log)
 {
-    bool boolean = IoCreationController::createDirectory("//asldkma**&^%/1/");
+    std::string invalidPath = "//asldkma**&^%/1/";
 
-    std::string result = (boolean == false) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
+    bool expected = false;
+    bool actual = IoCreationController::createDirectory(invalidPath);
 
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
-void TestIoCreationController::createDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log)
+void TestIoCreationController::createDirectory_whenCalledWithValidPath_returnsTrue (Logger & log)
 {
-    std::string directoryPath = std::string(DATA_FOLDER) + "/testCreateDirectory";
-    bool boolean = IoCreationController::createDirectory(directoryPath);
-    IoDestructionController::deleteDirectory(directoryPath);
+    std::string validPath = std::string(DATA_FOLDER) + "/TestCreateDirectory";
+    IoDestructionController::deleteDirectory(validPath);
 
-    std::string result = (boolean) ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    bool expected = true;
+    bool actual = IoCreationController::createDirectory(validPath);
+    IoDestructionController::deleteDirectory(validPath);
+    
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }

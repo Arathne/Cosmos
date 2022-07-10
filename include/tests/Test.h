@@ -1,6 +1,7 @@
 #ifndef TEST_H
 #define TEST_H
 
+#include <tests/UnitTest.h>
 #include <Logger.h>
 
 class Test 

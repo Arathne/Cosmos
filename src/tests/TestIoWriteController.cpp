@@ -20,40 +20,32 @@ void TestIoWriteController::run (Logger & log)
 
 void TestIoWriteController::write_whenCalledWithInvalidPath_returnsFalse (Logger & log) 
 {
-    bool success = IoWriteController::write(INVALID_PATH, "");
+    bool expected = false;
+    bool actual = IoWriteController::write(INVALID_PATH, "");
 
-    std::string result = success == false ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
 void TestIoWriteController::write_whenCalledWithValidPath_returnsTrue (Logger & log) 
 {
-    bool success = IoWriteController::write(VALID_PATH, "");
+    bool expected = true;
+    bool actual = IoWriteController::write(VALID_PATH, "");
 
-    std::string result = success ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
 void TestIoWriteController::append_whenCalledWithInvalidPath_returnsFalse (Logger & log) 
 {
-    bool success = IoWriteController::append(INVALID_PATH, "");
+    bool expected = false;
+    bool actual = IoWriteController::append(INVALID_PATH, "");
 
-    std::string result = success == false ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
 
 void TestIoWriteController::append_whenCalledWithValidPath_returnsTrue (Logger & log)
 {
-    bool success = IoWriteController::append(VALID_PATH, "");
+    bool expected = true;
+    bool actual = IoWriteController::append(VALID_PATH, "");
 
-    std::string result = success ? "success" : "failed";
-    std::string output = result + " :: " + __FUNCTION__;
-
-    log.add(output);
+    UnitTest::equals(expected, actual, __FUNCTION__, log);
 }
