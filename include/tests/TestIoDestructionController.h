@@ -18,7 +18,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "failed to delete file"
         */
-        std::string deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (void);
+        void deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (Logger & log);
 
         /* testing: deleteFile()
          * params: [
@@ -26,7 +26,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "successfully deleted file"
         */
-        std::string deleteFile_whenCalledWithValidPath_ReturnsZero (void);
+        void deleteFile_whenCalledWithValidPath_ReturnsZero (Logger & log);
 
         /* testing: deleteDirectory()
          * params: [
@@ -34,7 +34,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: false  "failed to delete directory"
         */
-        std::string deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+        void deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log);
 
         /* testing: deleteDirectory()
          * params: [
@@ -42,7 +42,7 @@ class TestIoDestructionController : public Test
             ]
          * expected: true  "successfully deleted directory"
         */
-        std::string deleteDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        void deleteDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log);
 };
 
 #endif

@@ -23,7 +23,7 @@ class TestIoWriteController : public Test
             ]
          * expected: false  "write failed"
         */
-        std::string write_whenCalledWithInvalidPath_returnsFalse (void);
+        void write_whenCalledWithInvalidPath_returnsFalse (Logger & log);
 
         /* testing: write()
          * params: [
@@ -31,7 +31,7 @@ class TestIoWriteController : public Test
             ]
          * expected: true  "write successful"
         */
-        std::string write_whenCalledWithValidPath_returnsTrue (void);
+        void write_whenCalledWithValidPath_returnsTrue (Logger & log);
 
         /* testing: append()
          * params: [
@@ -39,7 +39,7 @@ class TestIoWriteController : public Test
             ]
          * expected: false  "append failed"
         */
-        std::string append_whenCalledWithInvalidPath_returnsFalse (void);
+        void append_whenCalledWithInvalidPath_returnsFalse (Logger & log);
 
         /* testing: append()
          * params: [
@@ -47,7 +47,7 @@ class TestIoWriteController : public Test
             ]
          * expected: true  "append successful"
         */
-        std::string append_whenCalledWithValidPath_returnsTrue (void);
+        void append_whenCalledWithValidPath_returnsTrue (Logger & log);
 };
 
 #endif

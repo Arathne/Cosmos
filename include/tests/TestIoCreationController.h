@@ -18,7 +18,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: int  <0  "failed to create new file"
         */
-        std::string createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (void);
+        void createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (Logger & log);
 
         /* testing: createFile()
          * params: [
@@ -26,7 +26,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: int  0  "successfully created new file"
         */
-        std::string createFile_whenCalledWithValidPath_ReturnsZero (void);
+        void createFile_whenCalledWithValidPath_ReturnsZero (Logger & log);
 
         /* testing: createDirectory()
          * params: [
@@ -34,7 +34,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: false  "failed to create new directory"
         */
-        std::string createDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+        void createDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log);
 
         /* testing: createDirectory()
          * params: [
@@ -42,7 +42,7 @@ class TestIoCreationController  : public Test
             ]
          * expected: true  "successfully created new directory"
         */
-        std::string createDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        void createDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log);
 };
 
 #endif

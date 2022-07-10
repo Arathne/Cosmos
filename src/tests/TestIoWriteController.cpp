@@ -12,48 +12,48 @@ TestIoWriteController::TestIoWriteController (void):
 
 void TestIoWriteController::run (Logger & log)
 {
-    log.add(write_whenCalledWithInvalidPath_returnsFalse());
-    log.add(write_whenCalledWithValidPath_returnsTrue());
-    log.add(append_whenCalledWithInvalidPath_returnsFalse());
-    log.add(append_whenCalledWithValidPath_returnsTrue());
+    write_whenCalledWithInvalidPath_returnsFalse(log);
+    write_whenCalledWithValidPath_returnsTrue(log);
+    append_whenCalledWithInvalidPath_returnsFalse(log);
+    append_whenCalledWithValidPath_returnsTrue(log);
 }
 
-std::string TestIoWriteController::write_whenCalledWithInvalidPath_returnsFalse (void) 
+void TestIoWriteController::write_whenCalledWithInvalidPath_returnsFalse (Logger & log) 
 {
     bool success = IoWriteController::write(INVALID_PATH, "");
 
     std::string result = success == false ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoWriteController::write_whenCalledWithValidPath_returnsTrue() 
+void TestIoWriteController::write_whenCalledWithValidPath_returnsTrue (Logger & log) 
 {
     bool success = IoWriteController::write(VALID_PATH, "");
 
     std::string result = success ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoWriteController::append_whenCalledWithInvalidPath_returnsFalse() 
+void TestIoWriteController::append_whenCalledWithInvalidPath_returnsFalse (Logger & log) 
 {
     bool success = IoWriteController::append(INVALID_PATH, "");
 
     std::string result = success == false ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoWriteController::append_whenCalledWithValidPath_returnsTrue()
+void TestIoWriteController::append_whenCalledWithValidPath_returnsTrue (Logger & log)
 {
     bool success = IoWriteController::append(VALID_PATH, "");
 
     std::string result = success ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }

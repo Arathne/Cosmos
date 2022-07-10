@@ -19,7 +19,7 @@ class TestIoReadController : public Test
             ]
          * expected: false  "not a directory"
         */
-        std::string isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void);
+        void isDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log);
 
         /* testing: isDirectory()
          * params: [
@@ -27,7 +27,7 @@ class TestIoReadController : public Test
             ]
          * expected: true  "is a directory"
         */
-        std::string isDirectory_whenCalledWithValidPath_ReturnsTrue (void);
+        void isDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -35,7 +35,7 @@ class TestIoReadController : public Test
             ]
          * expected: "single word"
         */
-        std::string readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (void);
+        void readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -43,7 +43,7 @@ class TestIoReadController : public Test
             ]
          * expected: "single line"
         */
-        std::string readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (void);
+        void readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -51,7 +51,7 @@ class TestIoReadController : public Test
             ]
          * expected: "mulple lines"
         */
-        std::string readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (void);
+        void readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (Logger & log);
 
         /* testing: readText()
          * params: [
@@ -59,7 +59,7 @@ class TestIoReadController : public Test
             ]
          * expected: "empty string"
         */
-        std::string readText_whenCalledWithNonExistingFile_ReturnsEmptyString (void);
+        void readText_whenCalledWithNonExistingFile_ReturnsEmptyString (Logger & log);
 };
 
 #endif

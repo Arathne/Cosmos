@@ -7,23 +7,23 @@ std::string TestIoDestructionController::getName (void) const
 
 void TestIoDestructionController::run (Logger & log)
 {
-    log.add(deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero());
-    log.add(deleteFile_whenCalledWithValidPath_ReturnsZero());
-    log.add(deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse());
-    log.add(deleteDirectory_whenCalledWithValidPath_ReturnsTrue());
+    deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero(log);
+    deleteFile_whenCalledWithValidPath_ReturnsZero(log);
+    deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse(log);
+    deleteDirectory_whenCalledWithValidPath_ReturnsTrue(log);
 }
 
-std::string TestIoDestructionController::deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (void) 
+void TestIoDestructionController::deleteFile_whenCalledWithInvalidPath_ReturnsLessThanZero (Logger & log) 
 {
     int statusCode = IoDestructionController::deleteFile("lka/?!///!alskjdz");
 
     std::string result = (statusCode < 0) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
     
-    return output;
+    log.add(output);
 }
 
-std::string TestIoDestructionController::deleteFile_whenCalledWithValidPath_ReturnsZero (void)
+void TestIoDestructionController::deleteFile_whenCalledWithValidPath_ReturnsZero (Logger & log)
 {
     IoCreationController::createFile(TEMP_FILE);
 
@@ -32,20 +32,20 @@ std::string TestIoDestructionController::deleteFile_whenCalledWithValidPath_Retu
     std::string result = (statusCode == 0) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
     
-    return output;
+    log.add(output);
 }
         
-std::string TestIoDestructionController::deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (void)
+void TestIoDestructionController::deleteDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log)
 {
     bool boolean = IoDestructionController::deleteDirectory("lka/?!///!alskjdz");
 
     std::string result = (boolean == false) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoDestructionController::deleteDirectory_whenCalledWithValidPath_ReturnsTrue (void)
+void TestIoDestructionController::deleteDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log)
 {
     std::string path = std::string(DATA_FOLDER) + "/oaikjsd";
     IoCreationController::createDirectory(path);
@@ -54,5 +54,5 @@ std::string TestIoDestructionController::deleteDirectory_whenCalledWithValidPath
     std::string result = (boolean) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }

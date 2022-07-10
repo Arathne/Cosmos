@@ -7,15 +7,15 @@ std::string TestIoReadController::getName (void) const
 
 void TestIoReadController::run (Logger & log)
 {
-    log.add(isDirectory_whenCalledWithInvalidPath_ReturnsFalse());
-    log.add(isDirectory_whenCalledWithValidPath_ReturnsTrue());
-    log.add(readText_whenCalledWithNonExistingFile_ReturnsEmptyString());
-    log.add(readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile());
-    log.add(readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile());
-    log.add(readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile());
+    isDirectory_whenCalledWithInvalidPath_ReturnsFalse(log);
+    isDirectory_whenCalledWithValidPath_ReturnsTrue(log);
+    readText_whenCalledWithNonExistingFile_ReturnsEmptyString(log);
+    readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile(log);
+    readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile(log);
+    readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile(log);
 } 
 
-std::string TestIoReadController::isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void) 
+void TestIoReadController::isDirectory_whenCalledWithInvalidPath_ReturnsFalse (Logger & log) 
 {
     std::string directoryPath = "a9/*!-*s8dyhpk;nd!}{}AS|D";
     bool isDirectory = IoReadController::isDirectory(directoryPath);
@@ -23,10 +23,10 @@ std::string TestIoReadController::isDirectory_whenCalledWithInvalidPath_ReturnsF
     std::string result = (isDirectory == false) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoReadController::isDirectory_whenCalledWithValidPath_ReturnsTrue (void) 
+void TestIoReadController::isDirectory_whenCalledWithValidPath_ReturnsTrue (Logger & log) 
 {
     std::string directoryPath = "ux0:/app";
     bool isDirectory = IoReadController::isDirectory(directoryPath);
@@ -34,10 +34,10 @@ std::string TestIoReadController::isDirectory_whenCalledWithValidPath_ReturnsTru
     std::string result = (isDirectory == true) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (void) 
+void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile (Logger & log) 
 {
     std::string expectedText = "abcdefg";
     IoWriteController::write(TEMP_FILE, expectedText);
@@ -47,10 +47,10 @@ std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSin
     std::string result = (actualText == expectedText) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (void) 
+void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile (Logger & log) 
 {
     std::string expectedText = "hello world lmao";
     IoWriteController::write(TEMP_FILE, expectedText);
@@ -60,10 +60,10 @@ std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsSin
     std::string result = (actualText == expectedText) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (void) 
+void TestIoReadController::readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile (Logger & log) 
 {
     std::string expectedText = "hello world\nplaystation vita\nza warudo";
     IoWriteController::write(TEMP_FILE, expectedText);
@@ -73,10 +73,10 @@ std::string TestIoReadController::readText_whenCalledWithExistingFile_ReturnsMul
     std::string result = (actualText == expectedText) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 }
 
-std::string TestIoReadController::readText_whenCalledWithNonExistingFile_ReturnsEmptyString (void) 
+void TestIoReadController::readText_whenCalledWithNonExistingFile_ReturnsEmptyString (Logger & log) 
 {
     std::string expectedText = "";
 
@@ -86,6 +86,6 @@ std::string TestIoReadController::readText_whenCalledWithNonExistingFile_Returns
     std::string result = (actualText == expectedText) ? "success" : "failed";
     std::string output = result + " :: " + __FUNCTION__;
 
-    return output;
+    log.add(output);
 
 }
