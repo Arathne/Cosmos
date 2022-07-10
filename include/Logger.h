@@ -4,7 +4,8 @@
 #include <controllers/IoWriteController.h>
 #include <vector>
 
-class Logger {
+class Logger 
+{
     public:
         Logger (void);
         Logger (size_t max_size);

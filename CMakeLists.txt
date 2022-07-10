@@ -8,11 +8,11 @@ if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
 	endif()
 endif()
 
-project(onyx)
+project(cosmos)
 
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 
-set(VITA_APP_NAME "Onyx")
+set(VITA_APP_NAME "Cosmos")
 set(VITA_TITLEID "ET0000020")
 set(VITA_VERSION "01.00")
 
@@ -22,8 +22,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 include(path.cmake)
 include_directories(include)
 
-set(DATA_FOLDER "ux0:/data/onyx")
-set(TEST_FOLDER "${DATA_FOLDER}/test")
+set(DATA_FOLDER "ux0:/data/cosmos")
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
