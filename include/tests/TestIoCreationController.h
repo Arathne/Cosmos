@@ -9,7 +9,7 @@ class TestIoCreationController  : public Test
 {
     public:
         std::string getName (void) const;
-        void run (void);
+        void run (Logger & log);
 
     private:
         /* testing: createFile()

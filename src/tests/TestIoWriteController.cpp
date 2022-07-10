@@ -10,16 +10,12 @@ TestIoWriteController::TestIoWriteController (void):
     VALID_PATH(TEMP_FILE)
 {}
 
-void TestIoWriteController::run (void)
+void TestIoWriteController::run (Logger & log)
 {
-    Logger log;
-
     log.add(write_whenCalledWithInvalidPath_returnsFalse());
     log.add(write_whenCalledWithValidPath_returnsTrue());
     log.add(append_whenCalledWithInvalidPath_returnsFalse());
     log.add(append_whenCalledWithValidPath_returnsTrue());
-
-    log.writeToFile(std::string(TEST_FOLDER) + "/TestIoWriteController.txt");
 }
 
 std::string TestIoWriteController::write_whenCalledWithInvalidPath_returnsFalse (void) 

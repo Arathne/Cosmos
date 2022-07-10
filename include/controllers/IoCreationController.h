@@ -5,7 +5,8 @@
 #include <psp2/io/stat.h> 
 #include <string>
 
-class IoCreationController {
+class IoCreationController 
+{
     public:
         /* @name: createFile
          * @description: "creates empty file"

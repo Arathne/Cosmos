@@ -8,7 +8,6 @@ int main ()
     IoCreationController::createDirectory(DATA_FOLDER);
 
     #ifdef DEVELOPER_MODE
-        IoCreationController::createDirectory(TEST_FOLDER);
         TestController* tests = new TestController();
         tests -> runAllTests();
         delete tests;

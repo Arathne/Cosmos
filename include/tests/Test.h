@@ -3,16 +3,19 @@
 
 #include <Logger.h>
 
-class Test {
+class Test 
+{
     public:
         virtual ~Test (void) {}
 
         /* @name: run
          * @description: runs tests associated with the class 
-         * @params: []
+         * @params: [
+                log  Logger  "test results will be added here"
+            ]
          * @return: none
         */
-        virtual void run (void) = 0;
+        virtual void run (Logger & log) = 0;
 
         /* @name: getName
          * @description: get name of the test 

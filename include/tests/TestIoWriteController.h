@@ -11,7 +11,7 @@ class TestIoWriteController : public Test
         TestIoWriteController (void);
 
         std::string getName (void) const;
-        void run (void);
+        void run (Logger & log);
     
     private:
         const std::string INVALID_PATH;

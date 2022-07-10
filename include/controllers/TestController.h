@@ -5,7 +5,8 @@
 #include <tests/Test.h>
 #include <vector>
 
-class TestController {
+class TestController 
+{
     public:
         TestController (void);
         ~TestController (void);
@@ -19,6 +20,7 @@ class TestController {
 
     private:
         std::vector<Test*> testList_;
+        Logger log_;
 };
 
 #include <tests/TestIoReadController.h>

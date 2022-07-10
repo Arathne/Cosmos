@@ -29,8 +29,7 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 add_compile_definitions(
   DATA_FOLDER="${DATA_FOLDER}"
-  TEST_FOLDER="${TEST_FOLDER}"
-  TEMP_FILE="${TEST_FOLDER}/temp"
+  TEMP_FILE="${DATA_FOLDER}/temp"
   DEVELOPER_MODE
 )
 

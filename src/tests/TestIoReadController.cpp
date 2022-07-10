@@ -5,18 +5,14 @@ std::string TestIoReadController::getName (void) const
     return "TestIoReadController";
 }
 
-void TestIoReadController::run (void)
+void TestIoReadController::run (Logger & log)
 {
-    Logger log;
-    
     log.add(isDirectory_whenCalledWithInvalidPath_ReturnsFalse());
     log.add(isDirectory_whenCalledWithValidPath_ReturnsTrue());
     log.add(readText_whenCalledWithNonExistingFile_ReturnsEmptyString());
     log.add(readText_whenCalledWithExistingFile_ReturnsSingleWordFromFile());
     log.add(readText_whenCalledWithExistingFile_ReturnsSingleLineFromFile());
     log.add(readText_whenCalledWithExistingFile_ReturnsMultiLineFromFile());
-
-    log.writeToFile(std::string(TEST_FOLDER) + "/TestIoReadController.txt");
 } 
 
 std::string TestIoReadController::isDirectory_whenCalledWithInvalidPath_ReturnsFalse (void) 

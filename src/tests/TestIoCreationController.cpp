@@ -5,16 +5,12 @@ std::string TestIoCreationController::getName (void) const
     return "TestIoCreationController";
 }
 
-void TestIoCreationController::run (void)
+void TestIoCreationController::run (Logger & log)
 {
-    Logger log;
-
     log.add(createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero());
     log.add(createFile_whenCalledWithValidPath_ReturnsZero());
     log.add(createDirectory_whenCalledWithInvalidPath_ReturnsFalse());
     log.add(createDirectory_whenCalledWithValidPath_ReturnsTrue());
-
-    log.writeToFile(std::string(TEST_FOLDER) + "/TestIoCreationController.txt");
 }
 
 std::string TestIoCreationController::createFile_whenCalledWithInvalidPath_ReturnsIntLessThanZero (void)
@@ -50,7 +46,7 @@ std::string TestIoCreationController::createDirectory_whenCalledWithInvalidPath_
 
 std::string TestIoCreationController::createDirectory_whenCalledWithValidPath_ReturnsTrue (void)
 {
-    std::string directoryPath = std::string(TEST_FOLDER) + "/testCreateDirectory";
+    std::string directoryPath = std::string(DATA_FOLDER) + "/testCreateDirectory";
     bool boolean = IoCreationController::createDirectory(directoryPath);
     IoDestructionController::deleteDirectory(directoryPath);
 

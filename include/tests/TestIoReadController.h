@@ -6,10 +6,11 @@
 #include <controllers/IoDestructionController.h>
 #include <tests/Test.h>
 
-class TestIoReadController : public Test {
+class TestIoReadController : public Test 
+{
     public:
         std::string getName (void) const;
-        void run (void);
+        void run (Logger & log);
     
     private:
         /* testing: isDirectory()

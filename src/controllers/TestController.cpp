@@ -22,7 +22,10 @@ TestController::~TestController (void)
     for(int i = 0; i < testList_.size(); i++)
     {
         Test* testObj = testList_.at(i);
-        testObj -> run();
+        log_.add(testObj->getName());
+        testObj -> run(log_);
+        log_.add("");
     }
     IoDestructionController::deleteFile(TEMP_FILE);
+    log_.writeToFile(std::string(DATA_FOLDER) + "/TestResults.txt");
  }
