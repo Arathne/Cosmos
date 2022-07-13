@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>580</x><y>250</y><w>120</w><h>100</h></coordinates><panel_attributes>/RenderObj/
+--
+getDataType()
+getVertexStride()
+getVertexArray()
+getColorArray()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>280</y><w>180</w><h>50</h></coordinates><panel_attributes>Renderer
+--
+draw (RenderObj obj) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>190</y><w>100</w><h>30</h></coordinates><panel_attributes>vitaGL</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>890</x><y>210</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>290</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>420</y><w>340</w><h>90</h></coordinates><panel_attributes>RectangleRenderObj
+--
+rectangle_ : Rectangle
+color_ : Color
+--
+RectangleRenderObj (rect : Rectangle, color : Color) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>340</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>430</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>310</y><w>100</w><h>30</h></coordinates><panel_attributes>Color</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>310</y><w>140</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>430</y><w>100</w><h>30</h></coordinates><panel_attributes>Rectangle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>90</x><y>410</y><w>150</w><h>70</h></coordinates><panel_attributes>might need to swap to transform matrix after rendering model is a success.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>90</x><y>490</y><w>150</w><h>70</h></coordinates><panel_attributes>transform matrix model requires vertices to be set
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>

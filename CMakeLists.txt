@@ -32,6 +32,20 @@ add_compile_definitions(
   DEVELOPER_MODE
 )
 
+target_link_libraries(${PROJECT_NAME}
+  vitaGL
+  vitashark
+  SceShaccCg_stub
+  SceShaccCgExt
+  taihen_stub
+  SceGxm_stub
+  SceAppMgr_stub
+  SceDisplay_stub 
+  SceCommonDialog_stub
+  SceKernelDmacMgr_stub 
+  mathneon
+)
+
 vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME} UNSAFE)
 vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
   VERSION ${VITA_VERSION}

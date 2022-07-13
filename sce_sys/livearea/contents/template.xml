@@ -27,8 +27,8 @@
 
 	<frame id="frame4">
 		<liveitem>
-			<text valign="top" align="middle" text-align="left" text-valign="left" line-space="2" ellipsis="on">
-				<str size="22" shadow="on">Version 1.0</str>
+			<text valign="top" align="middle" text-align="middle" text-valign="middle" line-space="2" ellipsis="on">
+				<str size="20" shadow="on">Version 1.0</str>
 			</text>
 		</liveitem>
 	</frame>

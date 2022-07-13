@@ -11,4 +11,7 @@ set( SRC_FILES
     src/tests/TestIoWriteController.cpp
     src/tests/TestIoCreationController.cpp
     src/tests/TestIoDestructionController.cpp
+    src/tests/TestRectangle.cpp
+    src/rendering/Renderer.cpp
+    src/rendering/Rectangle.cpp
 )
