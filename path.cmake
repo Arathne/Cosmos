@@ -11,7 +11,10 @@ set( SRC_FILES
     src/tests/TestIoWriteController.cpp
     src/tests/TestIoCreationController.cpp
     src/tests/TestIoDestructionController.cpp
-    src/tests/TestRectangle.cpp
+    src/tests/TestColor.cpp
     src/rendering/Renderer.cpp
-    src/rendering/Rectangle.cpp
+    src/rendering/RenderObject.cpp
+    src/rendering/Color.cpp
+    src/rendering/Transform.cpp
+    src/rendering/Triangle.cpp
 )

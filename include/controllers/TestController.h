@@ -27,6 +27,6 @@ class TestController
 #include <tests/TestIoWriteController.h>
 #include <tests/TestIoCreationController.h>
 #include <tests/TestIoDestructionController.h>
-#include <tests/TestRectangle.h>
+#include <tests/TestColor.h>
 
 #endif
