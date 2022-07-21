@@ -15,7 +15,7 @@ class Renderer
 
         void clear (void);
         void swap (void);
-        void draw (const RenderObject & object);
+        void draw (RenderObject & object);
 };
 
 #endif

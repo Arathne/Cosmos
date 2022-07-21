@@ -20,17 +20,17 @@ int main ()
 
 
     vglInit(0x800000);
-	
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(-3, 3, -3, 3, -1, 1);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
 
 	Triangle triangle(Color(0, 255, 0));
 	Renderer renderer;
 
 	renderer.setClearColor(Color(0,0,0));
+	
+	Transform* transform = &triangle.getTransform();//.setScale(glm::vec3(500, 500, 500));
+	transform -> setRotationY(45);
+	//transform -> setScale(glm::vec3(5, 5, 0.1));
+	//transform -> setPosition(glm::vec3(0, 0, 0));
+	
 
 	for (;;){
 		renderer.clear();

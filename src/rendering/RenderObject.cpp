@@ -24,7 +24,12 @@ int RenderObject::getColorStride (void) const
     return 4; 
 }
 
-const glm::mat4 & RenderObject::getModelMatrix() 
+Transform & RenderObject::getTransform (void)
+{
+    return transform_;
+}
+
+const glm::mat4 & RenderObject::getModelMatrix (void) 
 { 
     return transform_.getMatrix(); 
 }

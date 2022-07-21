@@ -14,6 +14,7 @@ class RenderObject
 
         int getVertexStride (void) const;
         int getColorStride (void) const;
+        Transform & getTransform (void);
         const glm::mat4 & getModelMatrix (void);
 
         unsigned int getTotalVertices (void) const;

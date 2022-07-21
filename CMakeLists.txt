@@ -29,7 +29,7 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 add_compile_definitions(
   DATA_FOLDER="${DATA_FOLDER}"
   TEMP_FILE="${DATA_FOLDER}/temp"
-  DEVELOPER_MODE
+  #DEVELOPER_MODE
 )
 
 target_link_libraries(${PROJECT_NAME}

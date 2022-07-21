@@ -160,14 +160,24 @@ glm::vec3 Transform::getScale (void) const
 
 void Transform::updateMatrix (void) 
 {
-    glm::mat4 scaleMatrix = glm::scale(IDENTITY_MATRIX, scale_);
-    glm::mat4 translationMatrix = glm::translate(IDENTITY_MATRIX, translation_);
+    matrix_ = IDENTITY_MATRIX;
 
-    glm::mat4 rotationMatrix = glm::rotate(IDENTITY_MATRIX, glm::radians(rotation_.x), glm::vec3(1.0f, 0.0f, 0.0f));
-    rotationMatrix = glm::rotate(rotationMatrix, glm::radians(rotation_.y), glm::vec3(0.0f, 1.0f, 0.0f));
-    rotationMatrix = glm::rotate(rotationMatrix, glm::radians(rotation_.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    //matrix_ = glm::scale(matrix_, scale_);
+    matrix_ = glm::rotate(matrix_, glm::radians(rotation_.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    matrix_ = glm::rotate(matrix_, glm::radians(rotation_.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    matrix_ = glm::rotate(matrix_, glm::radians(rotation_.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    matrix_ = glm::translate(matrix_, translation_);
 
-    matrix_ = translationMatrix * rotationMatrix * scaleMatrix;
+    //glm::mat4 scaleMatrix = glm::scale(IDENTITY_MATRIX, scale_);
+    //glm::mat4 rotationMatrix = glm::rotate(IDENTITY_MATRIX, glm::radians(rotation_.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    //glm::mat4 translationMatrix = glm::translate(IDENTITY_MATRIX, translation_);
+
+    //rotationMatrix = glm::rotate(rotationMatrix, glm::radians(rotation_.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    //rotationMatrix = glm::rotate(rotationMatrix, glm::radians(rotation_.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    //matrix_;
+    //matrix_ = scaleMatrix * rotationMatrix * translationMatrix;
+    //matrix_ = translationMatrix * rotationMatrix * scaleMatrix;
 }
 
 const glm::mat4 & Transform::getMatrix (void)

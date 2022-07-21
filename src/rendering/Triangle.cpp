@@ -6,6 +6,7 @@ Triangle::Triangle (void)
     vertices_.push_back(glm::vec3(-1.0f, -1.0f,  0.0f));
     vertices_.push_back(glm::vec3( 1.0f, -1.0f,  0.0f));
     Triangle::setColor(Color(255, 0, 0));
+    transform_.setScale(glm::vec3(1.0f, 1.0f, 0.0f));
 }
 
 Triangle::Triangle (Color color) 
@@ -14,6 +15,7 @@ Triangle::Triangle (Color color)
     vertices_.push_back(glm::vec3(-1.0f, -1.0f,  0.0f));
     vertices_.push_back(glm::vec3( 1.0f, -1.0f,  0.0f));
     Triangle::setColor(color);
+    transform_.setScale(glm::vec3(1.0f, 1.0f, 0.0f));
 }
 
 Triangle::Triangle (const Triangle & rhs)
